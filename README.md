@@ -1,33 +1,14 @@
 <p align="center">
     <img src="firefox.png" alt="Firefox logo" width=128 height=128>
 
-<h2 align="center">Firefox AppImage</h2>
+<h2 align="center">Marble AppImage</h2>
 
-  <p align="center">Mozilla Firefox Stable, Beta and Nightly (unofficial) AppImages by GitHub Actions Continuous Integration
+<!--  <p align="center">Mozilla Firefox Stable, Beta and Nightly (unofficial) AppImages by GitHub Actions Continuous Integration -->
+  <p>
     <br>
-    <a href="https://github.com/srevinsaju/Firefox-Appimage/issues/new">Report bug</a>
-    ·
-    <a href="https://github.com/srevinsaju/Firefox-Appimage/issues/new">Request feature</a>
-    ·
-    <a href="https://github.com/srevinsaju/Firefox-Appimage/releases/latest">Download AppImage</a>
+    <a href="https://github.com/srevinsaju/Firefox-Appimage/""><b>Original Project</b></a>
   </p>
 </p>
-
-## Get Started
-
-Download the latest release from
-
-| Stable | Beta | Nightly | ESR | Developer Edition |
-| ------- | --------- | --------| ------ | --------- |
-| <img src="firefox.png" height=100> | <img src="https://mozilla.org/media/protocol/img/logos/firefox/browser/beta/logo-lg.160afbe8e73f.png" height=100>  | <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Firefox_Nightly_logo%2C_2019.svg" height=100> | <img src="firefox.png" height=100> | <img src="firefox.png" height=100> | 
-| [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-beta) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-nightly) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-esr-next) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-devedition) |
-
-
-or, use [`zap`](https://github.com/srevinsaju/zap), the command line AppImage package manager:
-```bash
-zap install --github --from=srevinsaju/Firefox-AppImage firefox-appimage
-```
-
 
 ### Executing
 #### File Manager
@@ -37,19 +18,17 @@ Double-click the `*.AppImage` file, and you are done.
 the `+x` permissions. So, right click > Properties > Allow Execution
 
 #### Terminal 
+
 ```bash
-./Firefox-*.AppImage
-```
-```bash
-chmod +x Firefox-*.AppImage
-./Firefox-*.AppImage
+chmod +x marble*.AppImage
+./marble*.AppImage
 ```
 
 In case FUSE libraries are not installed on the host system, it is 
 still possible to run the AppImage
 
 ```bash
-./Firefox-*.AppImage --appimage-extract
+./marble*.AppImage --appimage-extract
 cd squashfs-root
 ./AppRun
 ```
