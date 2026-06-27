@@ -30,9 +30,11 @@ export FIREFOX_PRODUCT=marble
 export APPIMAGE_EXTRACT_AND_RUN=1
 
 rm -rf build/AppDir
-rm -rf build/firefox*
+rm -rf build/$FIREFOX_PRODUCT*
 mkdir -p build/src
 
+# TODO: Use github CLI to downlaod directly from the releases page
+# Or maybe we could do a tiny script to scrape the page and find the Linux binary
 if [[ ! -f "build/src/$FIREFOX_PRODUCT.tar.xz" ]]; then
     echo "==> Downloading $FIREFOX_PRODUCT"
     wget "https://github.com/NetworkNeighborhood/Marble/releases/download/G2-b1.1/marble-G2-b1.1.en-US.linux-x86_64.tar.xz" -O "build/src/$FIREFOX_PRODUCT.tar.xz" 
