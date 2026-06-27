@@ -26,22 +26,23 @@
 
 set -eu
 
+export FIREFOX_PRODUCT=marble
 export APPIMAGE_EXTRACT_AND_RUN=1
 
 rm -rf build/AppDir
 rm -rf build/firefox*
 mkdir -p build/src
 
-if [[ ! -f "build/src/$FIREFOX_PRODUCT.tar.bz2" ]]; then
+if [[ ! -f "build/src/$FIREFOX_PRODUCT.tar.xz" ]]; then
     echo "==> Downloading $FIREFOX_PRODUCT"
-    wget "https://download.mozilla.org/?product=$FIREFOX_PRODUCT-latest-ssl&os=$FIREFOX_OS&lang=$FIREFOX_LANG" -O "build/src/$FIREFOX_PRODUCT.tar.bz2" 
+    wget "https://github.com/NetworkNeighborhood/Marble/releases/download/G2-b1.1/marble-G2-b1.1.en-US.linux-x86_64.tar.xz" -O "build/src/$FIREFOX_PRODUCT.tar.xz" 
 fi
 
-tar -xvf "build/src/$FIREFOX_PRODUCT.tar.bz2" -C build
-mv build/firefox* build/AppDir
+tar -xvf "build/src/$FIREFOX_PRODUCT.tar.xz" -C build
+mv build/$FIREFOX_PRODUCT* build/AppDir
 
 echo "==> Copying AppRun"
-cat AppRun | sed "s,FIREFOX_BIN_FILE,$( basename build/AppDir/firefox*-bin ),g" > build/AppDir/AppRun
+cat AppRun | sed "s,FIREFOX_BIN_FILE,$( basename build/AppDir/$FIREFOX_PRODUCT*-bin ),g" > build/AppDir/AppRun
 chmod 755 build/AppDir/AppRun
 
 echo "==> Copying Firefox Desktop file"
