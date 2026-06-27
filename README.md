@@ -4,9 +4,10 @@
 <h2 align="center">Marble AppImage</h2>
 
 <!--  <p align="center">Mozilla Firefox Stable, Beta and Nightly (unofficial) AppImages by GitHub Actions Continuous Integration -->
-  <p>
+  <p align="center">
+    <a href="https://github.com/NetworkNeighborhood/Marble"><b>Marble Source code</b></a>
     <br>
-    <a href="https://github.com/srevinsaju/Firefox-Appimage/""><b>Original Project</b></a>
+    <a href="https://github.com/srevinsaju/Firefox-Appimage"><b>The original Firefox Appimage repo</b></a>
   </p>
 </p>
 
