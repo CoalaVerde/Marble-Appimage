@@ -33,11 +33,10 @@ rm -rf build/AppDir
 rm -rf build/$FIREFOX_PRODUCT*
 mkdir -p build/src
 
-# TODO: Use github CLI to downlaod directly from the releases page
-# Or maybe we could do a tiny script to scrape the page and find the Linux binary
 if [[ ! -f "build/src/$FIREFOX_PRODUCT.tar.xz" ]]; then
     echo "==> Downloading $FIREFOX_PRODUCT"
-    wget "https://github.com/NetworkNeighborhood/Marble/releases/download/G2-b1.1/marble-G2-b1.1.en-US.linux-x86_64.tar.xz" -O "build/src/$FIREFOX_PRODUCT.tar.xz" 
+    curl https://api.github.com/repos/NetworkNeighborhood/Marble/releases/latest > build/marble-releases-json
+    wget "$(cat build/marble-releases-json | grep linux | grep https | sed -n 's/.*"browser_download_url": "\(.*\)".*/\1/p')" -O "build/src/$FIREFOX_PRODUCT.tar.xz" 
 fi
 
 tar -xvf "build/src/$FIREFOX_PRODUCT.tar.xz" -C build
@@ -78,7 +77,8 @@ mkdir -p dist
 mv $FIREFOX_PRODUCT*.AppImage* dist/.
 echo "==> Done, saved $( realpath dist/$FIREFOX_PRODUCT*.AppImage)"
 
-echo "==> GitHub Actions "
-echo "FIREFOX_VERSION=$FIREFOX_VERSION" >> $GITHUB_ENV
-echo "FIREFOX_BUILD_ID=$FIREFOX_BUILD_ID" >> $GITHUB_ENV
+## I'll uncomment this when I know what this is for 
+#echo "==> GitHub Actions "
+#echo "FIREFOX_VERSION=$FIREFOX_VERSION" >> $GITHUB_ENV
+#echo "FIREFOX_BUILD_ID=$FIREFOX_BUILD_ID" >> $GITHUB_ENV
 
