@@ -76,9 +76,7 @@ export FIREFOX_BUILD_ID="$(cat build/AppDir/application.ini | grep -E 'BuildID' 
 mkdir -p dist
 mv $FIREFOX_PRODUCT*.AppImage* dist/.
 echo "==> Done, saved $( realpath dist/$FIREFOX_PRODUCT*.AppImage)"
-
-## I'll uncomment this when I know what this is for 
-#echo "==> GitHub Actions "
-#echo "FIREFOX_VERSION=$FIREFOX_VERSION" >> $GITHUB_ENV
-#echo "FIREFOX_BUILD_ID=$FIREFOX_BUILD_ID" >> $GITHUB_ENV
+echo "==> GitHub Actions "
+echo "FIREFOX_VERSION=$FIREFOX_VERSION" >> $GITHUB_ENV
+echo "FIREFOX_BUILD_ID=$FIREFOX_BUILD_ID" >> $GITHUB_ENV
 

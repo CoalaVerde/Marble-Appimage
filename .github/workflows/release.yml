@@ -11,18 +11,14 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        product: ['firefox', 'firefox-beta', 'firefox-esr', 'firefox-nightly', 'firefox-devedition']
     env:
-      FIREFOX_PRODUCT: ${{ matrix.product }}
+      FIREFOX_PRODUCT: 'marble'
       FIREFOX_OS: 'linux64'
       FIREFOX_LANG: 'en-US'
     steps:
     - uses: actions/checkout@v2
-      
 
-    - name: Build ${{ matrix.product }}
+    - name: Build marble
       run: |
         bash build/build.sh
         echo "$FIREFOX_VERSION.r$FIREFOX_BUILD_ID"
@@ -30,13 +26,13 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ matrix.product }}-continuous.AppImage
+        name: 'marble-continuous.AppImage'
         path: 'dist'
 
     - name: Release Tagged
       uses: marvinpinto/action-automatic-releases@latest
       with:
-        title: ${{ matrix.product }} v${{ env.FIREFOX_VERSION }}.r${{ env.FIREFOX_BUILD_ID }}
+        title: marble v${{ env.FIREFOX_VERSION }}.r${{ env.FIREFOX_BUILD_ID }}
         automatic_release_tag: ${{ env.FIREFOX_PRODUCT }}-v${{ env.FIREFOX_VERSION }}.r${{ env.FIREFOX_BUILD_ID }}
         prerelease: true
         draft: false 
@@ -47,7 +43,7 @@ jobs:
     - name: Release Continuous
       uses: marvinpinto/action-automatic-releases@latest
       with:
-        title: Latest Continous build for ${{ matrix.product }} v${{ env.FIREFOX_VERSION }}.r${{ env.FIREFOX_BUILD_ID }}
+        title: Latest Continous build for marble v${{ env.FIREFOX_VERSION }}.r${{ env.FIREFOX_BUILD_ID }}
         automatic_release_tag: ${{ env.FIREFOX_PRODUCT }}
         prerelease: false
         draft: false 
