@@ -17,6 +17,8 @@ jobs:
     - uses: actions/checkout@v5
     - name: Build marble
       run: |
+        ls
+        bash find .
         bash build/build.sh
         echo "$FIREFOX_VERSION.r$FIREFOX_BUILD_ID"
 
