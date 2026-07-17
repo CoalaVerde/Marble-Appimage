@@ -35,8 +35,8 @@ mkdir -p build/src
 
 if [[ ! -f "build/src/$FIREFOX_PRODUCT.tar.xz" ]]; then
     echo "==> Downloading $FIREFOX_PRODUCT"
-    curl https://api.github.com/repos/NetworkNeighborhood/Marble/releases/latest > build/marble-releases-json
-    wget "$(cat build/marble-releases-json | grep linux | grep https | sed -n 's/.*"browser_download_url": "\(.*\)".*/\1/p')" -O "build/src/$FIREFOX_PRODUCT.tar.xz" 
+    curl https://api.github.com/repositories/1004717126/releases/latest > build/marble-releases.json
+    wget "$(cat build/marble-releases.json | grep linux | grep https | sed -n 's/.*"browser_download_url": "\(.*\)".*/\1/p')" -O "build/src/$FIREFOX_PRODUCT.tar.xz" 
 fi
 
 tar -xvf "build/src/$FIREFOX_PRODUCT.tar.xz" -C build
