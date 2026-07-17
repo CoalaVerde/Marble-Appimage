@@ -4,4 +4,3 @@ AppDir
 dist/
 *.tar.*
 build/appimagetool
-*.DELETE_ME
