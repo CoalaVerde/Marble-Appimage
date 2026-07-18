@@ -15,9 +15,8 @@ jobs:
       FIREFOX_LANG: 'en-US'
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+
+
     - name: Build marble
       run: |
         bash build/build.sh
