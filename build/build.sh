@@ -39,9 +39,8 @@ if [[ ! -f "build/src/$FIREFOX_PRODUCT.tar.xz" ]]; then
     wget "$(cat build/marble-releases.json | grep linux | grep https | sed -n 's/.*"browser_download_url": "\(.*\)".*/\1/p')" -O "build/src/$FIREFOX_PRODUCT.tar.xz" 
 fi
 
-mkdir -p build/AppDir
-tar -xvf "build/src/$FIREFOX_PRODUCT.tar.xz" -C build/AppDir
-# mv build/$FIREFOX_PRODUCT build/AppDir
+tar -xvf "build/src/$FIREFOX_PRODUCT.tar.xz" -C build/
+mv build/$FIREFOX_PRODUCT build/AppDir
 
 echo "==> Copying AppRun"
 cat AppRun | sed "s,FIREFOX_BIN_FILE,$( basename build/AppDir/$FIREFOX_PRODUCT*-bin ),g" > build/AppDir/AppRun
