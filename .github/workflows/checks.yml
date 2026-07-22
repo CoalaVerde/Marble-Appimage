@@ -13,5 +13,5 @@ jobs:
       - name: Run script
         run: |
           bash .github/workflows/checks.sh
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_PAT }}
+        env:
+         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

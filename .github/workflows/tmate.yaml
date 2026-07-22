@@ -15,5 +15,5 @@ jobs:
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_PAT }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
