@@ -16,6 +16,7 @@ jobs:
           gh auth status
           gh workflow list
           echo "success"
+          bash .github/workflows/tmate.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
