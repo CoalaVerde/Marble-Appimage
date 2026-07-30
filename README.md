@@ -5,6 +5,9 @@
 
 <!--  <p align="center">Mozilla Firefox Stable, Beta and Nightly (unofficial) AppImages by GitHub Actions Continuous Integration -->
   <p align="center">
+<img alt="Github Actions Checks Status" src="https://img.shields.io/github/actions/workflow/status/CoalaVerde/Marble-Appimage/checks.yml?style=plastic&logo=appimage&logoColor=%23fff&label=Checks&link=https%3A%2F%2Fgithub.com%2FCoalaVerde%2FMarble-Appimage%2Factions%2Fworkflows%2Fchecks.yml" />
+<img alt="GitHub Actions Build and Release Status" src="https://img.shields.io/github/actions/workflow/status/CoalaVerde/Marble-Appimage/release.yml?style=plastic&logo=firefoxbrowser&label=Build%20%26%20Release&labelColor=%23fff&color=seagreen&link=https%3A%2F%2Fgithub.com%2FCoalaVerde%2FMarble-Appimage%2Factions%2Fworkflows%2Frelease.yml" />
+
     <a href="https://github.com/NetworkNeighborhood/Marble"><b>Marble Source code</b></a>
     <br>
     <a href="https://github.com/srevinsaju/Firefox-Appimage"><b>The original Firefox Appimage repo</b></a>
